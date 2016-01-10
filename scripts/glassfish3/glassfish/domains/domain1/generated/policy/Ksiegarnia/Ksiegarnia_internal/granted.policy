@@ -1,0 +1,10 @@
+/* AUTOMATICALLY GENERATED ON Sun Jan 10 17:41:23 CET 2016*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.EJBMethodPermission "BookManager", "updateBook,Local,com.ksiegarnia.domain.Book";
+  permission javax.security.jacc.EJBMethodPermission "BookManager", "deleteBook,Local,com.ksiegarnia.domain.Book";
+  permission javax.security.jacc.EJBMethodPermission "BookManager", "addBook,Local,com.ksiegarnia.domain.Book";
+  permission javax.security.jacc.EJBMethodPermission "BookManager", "getAllBook,Local,";
+};
+

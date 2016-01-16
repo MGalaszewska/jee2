@@ -21,13 +21,16 @@ public class BookManager {
 		book.setId(null);
 		em.persist(book);
 	}
-	public void updateBook(Book book){
-		book = em.find(Book.class, book.getId());
-		em.merge(book);
-	}
+	public void updateBook(Long id, String title, String author) {
+        Book book= em.find(Book.class, id);
+        book.setTitle(title);
+        book.setAuthor(author);
+
+        em.merge(book);
+    }
 	
-	public void deleteBook(Book book) {
-		book = em.find(Book.class, book.getId());
+	public void deleteBook(Long id) {
+		Book book = em.find(Book.class, id);
 		em.remove(book);
 	}
 	

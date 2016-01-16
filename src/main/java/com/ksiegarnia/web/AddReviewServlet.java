@@ -26,16 +26,16 @@ public class AddReviewServlet extends HttpServlet {
 		Book book = bookStorage.get(bookID);
 
 		String reviewText = request.getParameter("text");
-		String author = request.getParameter("revAuthor");
+		String revAuthor = request.getParameter("revAuthor");
 
 		Review review = new Review();
 		review.setText(reviewText);
-		review.setRevAuthor(author);
+		review.setRevAuthor(revAuthor);
 		review.setAddDate(new Date());
 
 		bookStorage.addReview(book, review);
 
 		response.sendRedirect(response.encodeRedirectURL(request
-				.getContextPath() + "/view/" + bookID));
+				.getContextPath() + "/book/view/" + bookID));
 	}
 }

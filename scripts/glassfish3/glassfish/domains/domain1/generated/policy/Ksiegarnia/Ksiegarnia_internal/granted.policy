@@ -1,11 +1,11 @@
-/* AUTOMATICALLY GENERATED ON Sat Jan 16 17:18:16 CET 2016*/
+/* AUTOMATICALLY GENERATED ON Sat Jan 16 18:29:06 CET 2016*/
 /* DO NOT EDIT */
 
 grant {
-  permission javax.security.jacc.EJBMethodPermission "BookManager", "updateBook,Local,com.ksiegarnia.domain.Book";
-  permission javax.security.jacc.EJBMethodPermission "BookManager", "deleteBook,Local,com.ksiegarnia.domain.Book";
+  permission javax.security.jacc.EJBMethodPermission "BookManager", "updateBook,Local,java.lang.Long,java.lang.String,java.lang.String";
   permission javax.security.jacc.EJBMethodPermission "BookManager", "addBook,Local,com.ksiegarnia.domain.Book";
   permission javax.security.jacc.EJBMethodPermission "BookManager", "get,Local,java.lang.Long";
+  permission javax.security.jacc.EJBMethodPermission "BookManager", "deleteBook,Local,java.lang.Long";
   permission javax.security.jacc.EJBMethodPermission "BookManager", "addReview,Local,com.ksiegarnia.domain.Book,com.ksiegarnia.domain.Review";
   permission javax.security.jacc.EJBMethodPermission "BookManager", "getAllBook,Local,";
 };

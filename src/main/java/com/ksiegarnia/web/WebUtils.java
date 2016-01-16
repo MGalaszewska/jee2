@@ -11,5 +11,13 @@ public class WebUtils {
 
         return Long.valueOf(bookID);
     }
+    
+    public static void redirectToMainPage(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/main"));
+    }
+
+    public static void redirectToBookView(HttpServletRequest request, HttpServletResponse response, Long id) throws IOException {
+        response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/view/" + id));
+    }
 
 }

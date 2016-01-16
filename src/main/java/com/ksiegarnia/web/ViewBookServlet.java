@@ -28,7 +28,7 @@ public class ViewBookServlet extends HttpServlet{
         Book book = bookStorage.get(bookID);
         
         request.setAttribute("book", book);
-        //request.setAttribute("reviews", book.getReviews());
+        request.setAttribute("reviews", book.getReviews());
         request.getRequestDispatcher("/book/view.jsp").forward(request, response);
     }
 }

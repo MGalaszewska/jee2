@@ -8,22 +8,9 @@
     </application>
   </system-applications>
   <applications>
-    <application context-root="/zakladPogrzebowy" location="${com.sun.aas.instanceRootURI}/applications/zakladPogrzebowy/" name="zakladPogrzebowy" object-type="user">
-      <property name="appLocation" value="${com.sun.aas.instanceRootURI}/applications/__internal/zakladPogrzebowy/zakladPogrzebowy.war"></property>
-      <property name="org.glassfish.ejb.container.application_unique_id" value="95147629903020032"></property>
-      <property name="org.glassfish.persistence.app_name_property" value="zakladPogrzebowy"></property>
-      <property name="defaultAppName" value="zakladPogrzebowy"></property>
-      <module name="zakladPogrzebowy">
-        <engine sniffer="ejb"></engine>
-        <engine sniffer="security"></engine>
-        <engine sniffer="jpa"></engine>
-        <engine sniffer="web"></engine>
-        <engine sniffer="weld"></engine>
-      </module>
-    </application>
     <application context-root="/Ksiegarnia" location="${com.sun.aas.instanceRootURI}/applications/Ksiegarnia/" name="Ksiegarnia" object-type="user">
       <property name="appLocation" value="${com.sun.aas.instanceRootURI}/applications/__internal/Ksiegarnia/Ksiegarnia.war"></property>
-      <property name="org.glassfish.ejb.container.application_unique_id" value="95188471553261568"></property>
+      <property name="org.glassfish.ejb.container.application_unique_id" value="95221202123685888"></property>
       <property name="org.glassfish.persistence.app_name_property" value="Ksiegarnia"></property>
       <property name="defaultAppName" value="Ksiegarnia"></property>
       <module name="Ksiegarnia">
@@ -46,7 +33,6 @@
   <servers>
     <server name="server" config-ref="server-config">
       <application-ref ref="__admingui" virtual-servers="__asadmin"></application-ref>
-      <application-ref ref="zakladPogrzebowy" virtual-servers="server"></application-ref>
       <application-ref ref="Ksiegarnia" virtual-servers="server"></application-ref>
       <resource-ref ref="jdbc/__TimerPool"></resource-ref>
       <resource-ref ref="jdbc/__default"></resource-ref>

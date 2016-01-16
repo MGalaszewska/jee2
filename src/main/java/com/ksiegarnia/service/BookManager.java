@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import com.ksiegarnia.domain.Book;
+import com.ksiegarnia.domain.Review;
 
 @Stateless
 public class BookManager {
@@ -29,6 +30,15 @@ public class BookManager {
 		book = em.find(Book.class, book.getId());
 		em.remove(book);
 	}
+	
+	public void addReview(Book book, Review review) {
+        List<Review> reviews = book.getReviews();
+        reviews.add(review);
+
+        book.setReviews(reviews);
+
+        em.merge(book);
+    }
 
 	@SuppressWarnings("unchecked")
 	public List<Book> getAllBook() {

@@ -12,15 +12,15 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@NamedQueries({ @NamedQuery(name = "review.all", query = "Select r from Review r") })
+@NamedQueries(@NamedQuery(name = "review.all", query = "Select r from Review r"))
 public class Review {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private String author = "";
-	private String reviev = "";
+	private String revAuthor = "";
+	private String text = "";
 	
 	@Temporal(TemporalType.DATE)
 	private Date addDate = new Date();
@@ -41,20 +41,20 @@ public class Review {
 		this.addDate = addDate;
 	}
 
-	public String getAuthor() {
-		return author;
+	public String getRevAuthor() {
+		return revAuthor;
 	}
 
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setRevAuthor(String revAuthor) {
+		this.revAuthor = revAuthor;
 	}
 
-	public String getReviev() {
-		return reviev;
+	public String getText() {
+		return text;
 	}
 
-	public void setReviev(String reviev) {
-		this.reviev = reviev;
+	public void setText(String text) {
+		this.text = text;
 	}
 
 }

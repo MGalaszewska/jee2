@@ -13,7 +13,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 @Entity
-@NamedQueries({ @NamedQuery(name = "book.all", query = "select b from Book b order by b.id") })
+@NamedQueries(@NamedQuery(name = "book.all", query = "select b from Book b order by b.id"))
 public class Book implements Serializable {
 	/**
 	 * 

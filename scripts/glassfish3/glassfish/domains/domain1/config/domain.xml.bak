@@ -7,21 +7,7 @@
       </module>
     </application>
   </system-applications>
-  <applications>
-    <application context-root="/zakladPogrzebowy" location="${com.sun.aas.instanceRootURI}/applications/zakladPogrzebowy/" name="zakladPogrzebowy" object-type="user">
-      <property name="appLocation" value="${com.sun.aas.instanceRootURI}/applications/__internal/zakladPogrzebowy/zakladPogrzebowy.war"></property>
-      <property name="org.glassfish.ejb.container.application_unique_id" value="95147629903020032"></property>
-      <property name="org.glassfish.persistence.app_name_property" value="zakladPogrzebowy"></property>
-      <property name="defaultAppName" value="zakladPogrzebowy"></property>
-      <module name="zakladPogrzebowy">
-        <engine sniffer="ejb"></engine>
-        <engine sniffer="security"></engine>
-        <engine sniffer="jpa"></engine>
-        <engine sniffer="web"></engine>
-        <engine sniffer="weld"></engine>
-      </module>
-    </application>
-  </applications>
+  <applications></applications>
   <resources>
     <jdbc-connection-pool driver-classname="" datasource-classname="org.hsqldb.jdbc.JDBCDataSource" res-type="javax.sql.DataSource" description="" name="HSQLPool" ping="true">
       <property name="DatabaseName" value="jdbc:hsqldb:hsql://localhost/workdb"></property>
@@ -34,7 +20,6 @@
   <servers>
     <server name="server" config-ref="server-config">
       <application-ref ref="__admingui" virtual-servers="__asadmin"></application-ref>
-      <application-ref ref="zakladPogrzebowy" virtual-servers="server"></application-ref>
       <resource-ref ref="jdbc/__TimerPool"></resource-ref>
       <resource-ref ref="jdbc/__default"></resource-ref>
     </server>

@@ -236,7 +236,7 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("\t\t\t\t\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${book.author}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\n");
-          out.write("\t\t\t\t\t\t\t\t\t<td><a href=\"book/view/");
+          out.write("\t\t\t\t\t\t\t\t\t<td><a href=\"view/");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${book.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\"> View </a> | <a\n");
           out.write("\t\t\t\t\t\t\t\t\t\thref=\"edit/");

@@ -30,7 +30,7 @@
 									<td>${book.id}</td>
 									<td>${book.title}</td>
 									<td>${book.author}</td>
-									<td><a href="book/view/${book.id}"> View </a> | <a
+									<td><a href="view/${book.id}"> View </a> | <a
 										href="edit/${book.id}"> Edit </a> | <a
 										href="remove/${book.id}"> Remove </a></td>
 								</tr>

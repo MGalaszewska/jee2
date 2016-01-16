@@ -12,10 +12,6 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/main")
 public class MainBookServlet extends HttpServlet{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	@EJB
     private BookManager bookStorage;
 	

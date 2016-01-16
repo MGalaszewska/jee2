@@ -23,7 +23,7 @@
     </application>
     <application context-root="/Ksiegarnia" location="${com.sun.aas.instanceRootURI}/applications/Ksiegarnia/" name="Ksiegarnia" object-type="user">
       <property name="appLocation" value="${com.sun.aas.instanceRootURI}/applications/__internal/Ksiegarnia/Ksiegarnia.war"></property>
-      <property name="org.glassfish.ejb.container.application_unique_id" value="95187327731826688"></property>
+      <property name="org.glassfish.ejb.container.application_unique_id" value="95188471553261568"></property>
       <property name="org.glassfish.persistence.app_name_property" value="Ksiegarnia"></property>
       <property name="defaultAppName" value="Ksiegarnia"></property>
       <module name="Ksiegarnia">

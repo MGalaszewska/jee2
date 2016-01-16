@@ -70,51 +70,51 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</head>\n");
       out.write("<body>\n");
       out.write("\n");
-      out.write("<div>\n");
-      out.write("    <div>\n");
-      out.write("        <h3>Books</h3>\n");
-      out.write("        <br/>\n");
+      out.write("\t<div>\n");
+      out.write("\t\t<div>\n");
+      out.write("\t\t\t<h3>Books</h3>\n");
+      out.write("\t\t\t<br />\n");
       out.write("\n");
-      out.write("        ");
+      out.write("\t\t\t");
       if (_jspx_meth_c_choose_0(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("    </div>\n");
+      out.write("\t\t</div>\n");
       out.write("\n");
-      out.write("    <div>\n");
-      out.write("        <div>\n");
-      out.write("            <h3>Add new book!</h3>\n");
-      out.write("            <br/>\n");
+      out.write("\t\t<div>\n");
+      out.write("\t\t\t<div>\n");
+      out.write("\t\t\t\t<h3>Add new book!</h3>\n");
+      out.write("\t\t\t\t<br />\n");
       out.write("\n");
-      out.write("            <form action=\"add\" method=\"post\">\n");
-      out.write("                <div>\n");
-      out.write("                    <label for=\"book\">Title:</label>\n");
+      out.write("\t\t\t\t<form action=\"add\" method=\"post\">\n");
+      out.write("\t\t\t\t\t<div>\n");
+      out.write("\t\t\t\t\t\t<label for=\"book\">Title:</label>\n");
       out.write("\n");
-      out.write("                    <div>\n");
-      out.write("                        <input type=\"text\" name=\"title\" id=\"title\">\n");
-      out.write("                    </div>\n");
-      out.write("                </div>\n");
+      out.write("\t\t\t\t\t\t<div>\n");
+      out.write("\t\t\t\t\t\t\t<input type=\"text\" name=\"title\" id=\"title\">\n");
+      out.write("\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t</div>\n");
       out.write("\n");
-      out.write("                <div>\n");
-      out.write("                    <label for=\"book\">Author:</label>\n");
+      out.write("\t\t\t\t\t<div>\n");
+      out.write("\t\t\t\t\t\t<label for=\"book\">Author:</label>\n");
       out.write("\n");
-      out.write("                    <div>\n");
-      out.write("                        <input type=\"text\" name=\"author\" id=\"author\">\n");
-      out.write("                    </div>\n");
-      out.write("                </div>\n");
+      out.write("\t\t\t\t\t\t<div>\n");
+      out.write("\t\t\t\t\t\t\t<input type=\"text\" name=\"author\" id=\"author\">\n");
+      out.write("\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t</div>\n");
       out.write("\n");
-      out.write("                <div>\n");
-      out.write("                    <div>\n");
-      out.write("                        <button type=\"submit\">Add</button>\n");
-      out.write("                    </div>\n");
-      out.write("                </div>\n");
-      out.write("            </form>\n");
-      out.write("        </div>\n");
-      out.write("    </div>\n");
+      out.write("\t\t\t\t\t<div>\n");
+      out.write("\t\t\t\t\t\t<div>\n");
+      out.write("\t\t\t\t\t\t\t<button type=\"submit\">Add</button>\n");
+      out.write("\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t</form>\n");
+      out.write("\t\t\t</div>\n");
+      out.write("\t\t</div>\n");
       out.write("\n");
-      out.write("    <hr>\n");
+      out.write("\t\t<hr>\n");
       out.write("\n");
-      out.write("</div>\n");
+      out.write("\t</div>\n");
       out.write("\n");
       out.write("</body>\n");
       out.write("</html>");
@@ -143,15 +143,15 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_choose_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("            ");
+        out.write("\t\t\t\t");
         if (_jspx_meth_c_when_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("            ");
+        out.write("\t\t\t\t");
         if (_jspx_meth_c_otherwise_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("        ");
+        out.write("\t\t\t");
         int evalDoAfterBody = _jspx_th_c_choose_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -178,24 +178,24 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_when_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("                <table class=\"zui-table zui-table-horizontal zui-table-highlight\">\n");
-        out.write("                <thead>\n");
-        out.write("                    <tr>\n");
-        out.write("                        <th>#</th>\n");
-        out.write("                        <th>Title</th>\n");
-        out.write("                        <th>Author</th>\n");
-        out.write("                        <th>Actions</th>\n");
-        out.write("                    </tr>\n");
-        out.write("                    </thead>\n");
-        out.write("                    <tbody>\n");
-        out.write("                    ");
+        out.write("\t\t\t\t\t<table class=\"zui-table zui-table-horizontal zui-table-highlight\">\n");
+        out.write("\t\t\t\t\t\t<thead>\n");
+        out.write("\t\t\t\t\t\t\t<tr>\n");
+        out.write("\t\t\t\t\t\t\t\t<th>#</th>\n");
+        out.write("\t\t\t\t\t\t\t\t<th>Title</th>\n");
+        out.write("\t\t\t\t\t\t\t\t<th>Author</th>\n");
+        out.write("\t\t\t\t\t\t\t\t<th>Actions</th>\n");
+        out.write("\t\t\t\t\t\t\t</tr>\n");
+        out.write("\t\t\t\t\t\t</thead>\n");
+        out.write("\t\t\t\t\t\t<tbody>\n");
+        out.write("\t\t\t\t\t\t\t");
         if (_jspx_meth_c_forEach_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("                    </tbody>\n");
-        out.write("                </table>\n");
+        out.write("\t\t\t\t\t\t</tbody>\n");
+        out.write("\t\t\t\t\t</table>\n");
         out.write("\n");
-        out.write("            ");
+        out.write("\t\t\t\t");
         int evalDoAfterBody = _jspx_th_c_when_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -226,25 +226,27 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\n");
-          out.write("                        <tr>\n");
-          out.write("                            <td>");
+          out.write("\t\t\t\t\t\t\t\t<tr>\n");
+          out.write("\t\t\t\t\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${book.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\n");
-          out.write("                            <td>");
+          out.write("\t\t\t\t\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${book.title}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\n");
-          out.write("                            <td>");
+          out.write("\t\t\t\t\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${book.author}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\n");
-          out.write("                            <td>\n");
-          out.write("                                <a href=\"view/");
+          out.write("\t\t\t\t\t\t\t\t\t<td><a href=\"book/view/");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${book.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\">\n");
-          out.write("                                    View\n");
-          out.write("                                </a>\n");
-          out.write("                            </td>\n");
-          out.write("                        </tr>\n");
-          out.write("                    ");
+          out.write("\"> View </a> | <a\n");
+          out.write("\t\t\t\t\t\t\t\t\t\thref=\"edit/");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${book.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\"> Edit </a> | <a\n");
+          out.write("\t\t\t\t\t\t\t\t\t\thref=\"remove/");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${book.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\"> Remove </a></td>\n");
+          out.write("\t\t\t\t\t\t\t\t</tr>\n");
+          out.write("\t\t\t\t\t\t\t");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -276,8 +278,8 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_otherwise_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("                <div class=\"well\">No books yet!</div>\n");
-        out.write("            ");
+        out.write("\t\t\t\t\t<div class=\"well\">No books yet!</div>\n");
+        out.write("\t\t\t\t");
         int evalDoAfterBody = _jspx_th_c_otherwise_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;

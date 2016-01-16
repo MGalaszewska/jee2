@@ -12,6 +12,10 @@ public class BookManager {
     @PersistenceContext
     EntityManager em;
     
+    public Book get(Long id) {
+        return em.find(Book.class, id);
+    }
+    
 	public void addBook(Book book) {
 		book.setId(null);
 		em.persist(book);

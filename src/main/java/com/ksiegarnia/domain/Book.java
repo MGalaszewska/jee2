@@ -1,13 +1,16 @@
 package com.ksiegarnia.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 @Entity
 @NamedQueries({ @NamedQuery(name = "book.all", query = "select b from Book b order by b.id") })
@@ -23,6 +26,9 @@ public class Book implements Serializable {
 
 	private String title;
 	private String author;
+
+	@OneToMany(fetch = FetchType.EAGER)
+	private List<Review> reviews;
 
 	public Book() {
 		super();
@@ -51,5 +57,13 @@ public class Book implements Serializable {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
+	
+	public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
 
 }

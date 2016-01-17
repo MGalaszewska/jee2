@@ -28,7 +28,6 @@ public class AddReviewServlet extends HttpServlet {
 		String reviewText = request.getParameter("text");
 		String revAuthor = request.getParameter("revAuthor");
 
-		Review review = new Review();
 		review.setRevAuthor(revAuthor);
 		review.setAddDate(new Date());
 		bookStorage.addReview(book, review);

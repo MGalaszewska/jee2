@@ -8,7 +8,7 @@
 
 <body>
 <div>
- <h3>Student</h3>
+ <h3>Books</h3>
         <br/>
 
          <label>Title:</label>
@@ -18,8 +18,6 @@
         ${book.author} <br/>
         
 </div>
-<<<<<<< HEAD
-=======
 
 <p>Reviews:</p>
         <div class="well">
@@ -74,7 +72,6 @@
             </form>
         </div>
     </div>
->>>>>>> 4b000221e130c42ce7dda85345a7fae63bdeb0a0
 
 </body>
 </html>

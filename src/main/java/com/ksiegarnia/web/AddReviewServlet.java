@@ -29,11 +29,12 @@ public class AddReviewServlet extends HttpServlet {
 		String revAuthor = request.getParameter("revAuthor");
 
 		Review review = new Review();
+		review.setText(reviewText);
 		review.setRevAuthor(revAuthor);
 		review.setAddDate(new Date());
 		bookStorage.addReview(book, review);
 
 		response.sendRedirect(response.encodeRedirectURL(request
-				.getContextPath() + "/book/view/" + bookID));
+				.getContextPath() + "/view/" + bookID));
 	}
 }

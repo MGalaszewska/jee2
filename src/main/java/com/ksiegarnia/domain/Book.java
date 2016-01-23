@@ -32,7 +32,7 @@ public class Book implements Serializable {
 	public Book() {
 		super();
 	}
-
+	
 	public Long getId() {
 		return id;
 	}

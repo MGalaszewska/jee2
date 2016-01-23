@@ -14,10 +14,6 @@ import com.ksiegarnia.service.BookManager;
 
 @WebServlet(urlPatterns = "/view/*")
 public class ViewBookServlet extends HttpServlet{
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	@EJB
     private BookManager bookStorage;
 

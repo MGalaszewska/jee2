@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 </head>
-
+<link rel="stylesheet" type="text/css" href="../include/ksiegarnia.css">
 <body>
 <div>
  <h3>Books</h3>
@@ -18,7 +18,7 @@
         ${book.author} <br/>
         
 </div>
-
+<hr>
 <p>Reviews:</p>
         <div class="well">
             <c:choose>
@@ -27,7 +27,8 @@
                         <p>Date: ${review.revAuthor}</p>
                         <p>Author: ${review.addDate}</p>
                         <p>${review.text}</p>
-
+						<p><a href="../review/editRev/${review.id}"> Edit </a>
+						
                         <c:if test="${!loop.last}">
                             <hr />
                         </c:if>

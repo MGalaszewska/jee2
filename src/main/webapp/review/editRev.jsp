@@ -11,23 +11,23 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h3>Edit book:</h3>
+            <h3>Edit review:</h3>
             <br/>
 
-            <form action="${pageContext.request.contextPath}/edit/${book.id}" method="post" class="form-horizontal">
+            <form action="${pageContext.request.contextPath}/review/editRev/${review.id}" method="post" class="form-horizontal">
                 <div class="form-group">
-                    <label for="title" class="col-sm-2 control-label">Title:</label>
+                    <label for="revAuthor" class="col-sm-2 control-label">Title:</label>
 
                     <div class="col-sm-10">
-                        <input type="text" name="title" id="title" value="${book.title}" class="form-control">
+                        <input type="text" name="revAuthor" id="revAuthor" value="${review.revAuthor}" class="form-control">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="author" class="col-sm-2 control-label">Author:</label>
+                    <label for="text" class="col-sm-2 control-label">Message:</label>
 
                     <div class="col-sm-10">
-                        <input type="text" name="author" id="author" value="${book.author}" class="form-control">
+                        <input type="text" name="text" id="text" value="${review.text}" class="form-control">
                     </div>
                 </div>
 

@@ -12,7 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@NamedQueries(@NamedQuery(name = "review.all", query = "Select r from Review r"))
+@NamedQueries(@NamedQuery(name = "review.all", query = "Select r from Review r order by r.id"))
 public class Review {
 
 	@Id

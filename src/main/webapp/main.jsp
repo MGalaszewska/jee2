@@ -6,6 +6,7 @@
 <html lang="en">
 <head>
 </head>
+<link rel="stylesheet" type="text/css" href="include/ksiegarnia.css">
 <body>
 
 	<div>
@@ -37,7 +38,6 @@
 							</c:forEach>
 						</tbody>
 					</table>
-
 				</c:when>
 				<c:otherwise>
 					<div class="well">No books yet!</div>

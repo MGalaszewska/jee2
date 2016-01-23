@@ -28,6 +28,7 @@
                         <p>Author: ${review.addDate}</p>
                         <p>${review.text}</p>
 						<p><a href="../review/editRev/${review.id}"> Edit </a>
+						<p><a href="../review/removeReview/${review.id}"> Delete </a>
 						
                         <c:if test="${!loop.last}">
                             <hr />

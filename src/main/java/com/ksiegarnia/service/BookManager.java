@@ -10,6 +10,7 @@ import javax.persistence.PersistenceContext;
 
 import com.ksiegarnia.domain.Book;
 import com.ksiegarnia.domain.Review;
+import com.ksiegarnia.web.ViewBookServlet;
 
 @Stateless
 public class BookManager {
@@ -59,15 +60,21 @@ public class BookManager {
 
 	public void updateReview(Long id, String revAuthor, String text) {
 		Review review= em.find(Review.class, id);
-		//review.setAddDate(new Date());
 		review.setRevAuthor(revAuthor);
 		review.setText(text);
-
+		
         em.merge(review);
     }
 	
 	public void deleteReview(Long id) {
+		Long bookID = ViewBookServlet.idToDelete;
 		Review review = em.find(Review.class, id);
+		Book book = em.find(Book.class, bookID);
+		book.getReviews().remove(review);
+		List<Review> reviews = book.getReviews();
+		reviews.remove(review);
+		book.setReviews(reviews);
+		em.merge(book);
 		em.remove(review);
 	}
 

@@ -26,7 +26,7 @@ public class Book implements Serializable {
 	private String title;
 	private String author;
 
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval=true)
 	private List<Review> reviews;
 
 	public Book() {

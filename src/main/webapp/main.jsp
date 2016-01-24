@@ -1,84 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <html lang="en">
 <head>
+<jsp:include page="include/scripts.jsp" />
+
+<script>
+		$(document).ready(function()
+				{		
+				$.ajax
+					(
+						{
+							url: '${pageContext.request.contextPath}/api/books/showall',
+							type: 'GET',
+							success: function(dane)
+							{ 
+								var d = dane.length;
+								var table = document.getElementById("table");
+								for (var i = 0; i < d; i++)
+								{
+									    tr = $('<tr/>');
+									    tr.append("<td>"+dane[i].title+"</td>");
+									    tr.append("<td>"+dane[i].author+"</td>");
+									    td = $('<td/>');
+									    td.append("<a href='${pageContext.request.contextPath}/BookDetails/"+dane[i].id+"' class='btn btn-xs btn-warning' role='button'> Details </a> ");
+									    tr.append(td);
+									    td = $('<td/>');
+									    td.append("<a href='${pageContext.request.contextPath}/BookEdit/"+dane[i].id+"' class='btn btn-xs btn-warning' role='button'> Edit </a> ");
+									    td = $('<td/>');
+									    td.append("<a href='${pageContext.request.contextPath}/BookRemove/"+dane[i].id+"' class='btn btn-xs btn-warning' role='button'> Remove </a> ");
+									    tr.append(td);
+									    $(table).append(tr);
+								}
+							}
+						}	
+					);
+				}
+			);
+	</script>
+
 </head>
-<link rel="stylesheet" type="text/css" href="include/ksiegarnia.css">
+<link rel="stylesheet" type="text/css" href="../include/ksiegarnia.css">
 <body>
+<div>
+    <div>
+        <h1>Books</h1>
+        <div>
+        	<a href="${pageContext.request.contextPath}/api/books/addbook">Add</a>
+         </div>
+        <br/>
 
-	<div>
-		<div>
-			<h3>Books</h3>
-			<br />
-
-			<c:choose>
-				<c:when test="${books.size() > 0}">
-					<table class="zui-table zui-table-horizontal zui-table-highlight">
-						<thead>
-							<tr>
-								<th>#</th>
-								<th>Title</th>
-								<th>Author</th>
-								<th>Actions</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach var="book" items="${books}" varStatus="loopCounter">
-								<tr>
-									<td>${book.id}</td>
-									<td>${book.title}</td>
-									<td>${book.author}</td>
-									<td><a href="view/${book.id}"> View </a> | <a
-										href="edit/${book.id}"> Edit </a> | <a
-										href="remove/${book.id}"> Remove </a></td>
-								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
-				</c:when>
-				<c:otherwise>
-					<div class="well">No books yet!</div>
-				</c:otherwise>
-			</c:choose>
-		</div>
-
-		<div>
-			<div>
-				<h3>Add new book!</h3>
-				<br />
-
-				<form action="add" method="post">
-					<div>
-						<label for="book">Title:</label>
-
-						<div>
-							<input type="text" name="title" id="title">
-						</div>
-					</div>
-
-					<div>
-						<label for="book">Author:</label>
-
-						<div>
-							<input type="text" name="author" id="author">
-						</div>
-					</div>
-
-					<div>
-						<div>
-							<button type="submit">Add</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-
-		<hr>
-
-	</div>
+        <table id="table">
+               <tr>
+                     <th>Title</th>
+                     <th>Author</th>
+                     <th></th>
+              </tr>
+	</table>
+    </div>
+    </div>
 
 </body>
 </html>

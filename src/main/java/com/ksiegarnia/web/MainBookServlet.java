@@ -17,7 +17,6 @@ public class MainBookServlet extends HttpServlet{
 	
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("books", bookStorage.getAllBook());
         request.getRequestDispatcher("main.jsp").forward(request, response);
     }
 }

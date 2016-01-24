@@ -4,6 +4,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<jsp:include page="../include/scripts.jsp" />
+
+<script>
+		$(document).ready(function()
+			{
+				$( "#edit" ).on('click', function(e)
+					{	
+						e.preventDefault();
+						$.ajax
+						(
+						{
+						    url: '${pageContext.request.contextPath}/api/books/edit/${book.getId()}',
+						    type: 'PUT',
+						    data:
+							{
+								title: document.getElementById('title').value,
+								author: document.getElementById('author').value,
+								
+							},
+						    success: function() { document.location.replace("${pageContext.request.contextPath}/main"); },
+ 						    error: function() { alert("Nieprawidłowo wprowadzono dane!"); 
+ 						    }
+						}	
+						);
+					}
+				);
+			}
+		);
+	</script>
 </head>
 <link rel="stylesheet" type="text/css" href="../include/ksiegarnia.css">
 <body>
@@ -14,12 +43,12 @@
             <h3>Edit book:</h3>
             <br/>
 
-            <form action="${pageContext.request.contextPath}/edit/${book.id}" method="post" class="form-horizontal">
+            <form action="${pageContext.request.contextPath}/api/books/edit/${book.getId()}" method="post" data-toggle="validator" class="form-horizontal">
                 <div class="form-group">
                     <label for="title" class="col-sm-2 control-label">Title:</label>
 
                     <div class="col-sm-10">
-                        <input type="text" name="title" id="title" value="${book.title}" class="form-control">
+                        <input type="text" name="title" id="title" value="${book.getTitle()}" class="form-control">
                     </div>
                 </div>
 
@@ -27,13 +56,13 @@
                     <label for="author" class="col-sm-2 control-label">Author:</label>
 
                     <div class="col-sm-10">
-                        <input type="text" name="author" id="author" value="${book.author}" class="form-control">
+                        <input type="text" name="author" id="author" value="${book.getAuthor()}" class="form-control">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Save</button>
+                        <button id="edit" type="submit">Save</button>
                     </div>
                 </div>
             </form>

@@ -12,24 +12,24 @@ import javax.servlet.http.HttpServletResponse;
 import com.ksiegarnia.domain.Book;
 import com.ksiegarnia.service.BookManager;
 
-@WebServlet(urlPatterns = "/view/*")
+@WebServlet(urlPatterns = "/BookDetails/*")
 public class ViewBookServlet extends HttpServlet{
 	
 	public static Long idToDelete;
 	
 	@EJB
-    private BookManager bookStorage;
+    private BookManager bookStorage = new BookManager();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long bookID = WebUtils.getBookID(request);
+        Long id = WebUtils.getBookID(request);
 
-        Book book = bookStorage.get(bookID);
+        //Book book = bookStorage.getBook(bookID);
         
-        request.setAttribute("book", book);
-        request.setAttribute("reviews", book.getReviews());
+        request.setAttribute("bookID", id);
+        //request.setAttribute("reviews", book.getReviews());
         
-        idToDelete = bookID;
+     //   idToDelete = Long.getLong(id);
         request.getRequestDispatcher("/book/view.jsp").forward(request, response);
     }
 }

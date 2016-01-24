@@ -14,16 +14,17 @@ import com.ksiegarnia.service.BookManager;
 /**
  * Servlet implementation class RemoveBookServlet
  */
-@WebServlet(urlPatterns = "/remove/*")
+@WebServlet(urlPatterns = "/BookRemove/*")
 public class RemoveBookServlet extends HttpServlet{
     @EJB
     private BookManager bookStorage;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long bookID = WebUtils.getBookID(request);
+        Long id = WebUtils.getBookID(request);
 
-        bookStorage.deleteBook(bookID);
+        //bookStorage.deleteBook(bookID);
+        bookStorage.deleteBook(id);
 
         WebUtils.redirectToMainPage(request, response);
     }

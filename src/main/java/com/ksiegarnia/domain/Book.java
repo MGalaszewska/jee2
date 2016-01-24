@@ -26,9 +26,6 @@ public class Book implements Serializable {
 	private String title;
 	private String author;
 
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval=true)
-	private List<Review> reviews;
-
 	public Book() {
 		super();
 	}
@@ -56,13 +53,4 @@ public class Book implements Serializable {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	
-	public List<Review> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(List<Review> reviews) {
-        this.reviews = reviews;
-    }
-
 }

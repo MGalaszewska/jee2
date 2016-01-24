@@ -14,19 +14,19 @@ import com.ksiegarnia.service.BookManager;
 /**
  * Servlet implementation class EditBookServlet
  */
-@WebServlet(urlPatterns = "/edit/*")
+@WebServlet(urlPatterns = "/BookEdit/*")
 public class EditBookServlet extends HttpServlet{
     @EJB
     private BookManager bookStorage;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long bookID = WebUtils.getBookID(request);
+        Long id = WebUtils.getBookID(request);
 
-        request.setAttribute("book", bookStorage.get(bookID));
+        request.setAttribute("book", bookStorage.getBook(id));
         request.getRequestDispatcher("/book/edit.jsp").forward(request, response);
     }
-
+/*
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String title = request.getParameter("title");
@@ -37,4 +37,5 @@ public class EditBookServlet extends HttpServlet{
 
         WebUtils.redirectToBookView(request, response, bookID);
     }
+    */
 }

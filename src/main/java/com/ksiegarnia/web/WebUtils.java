@@ -8,7 +8,7 @@ public class WebUtils {
     public static Long getBookID(HttpServletRequest request) {
         String pathInfo = request.getPathInfo();
         String bookID = pathInfo.substring(pathInfo.lastIndexOf("/") + 1, pathInfo.length());
-
+       // return bookID;
         return Long.valueOf(bookID);
     }
     

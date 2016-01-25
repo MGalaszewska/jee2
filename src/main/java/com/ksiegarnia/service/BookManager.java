@@ -55,9 +55,6 @@ public class BookManager {
 	public void addReview(Review review) {
 		review.setId(null);
 		em.persist(review);
-		//Book book = em.find(Book.class, review.getBook().getId());
-		//em.merge(book);
-
 	}
 
 	public void updateReview(Book book, Review review, String revAuthor, String text) {

@@ -17,7 +17,6 @@
 						    type: 'POST',
 						    data:
 							{
-						    	addDate: document.getElementById('addDate').value,
 								book: document.getElementById('book').value,
 								revAuthor: document.getElementById('revAuthor').value,
 								text: document.getElementById('text').value
@@ -65,14 +64,6 @@
 
 		            	<div class="col-sm-10">
 		                	<input type="text" name="text" id="text" class="form-control"/>
-		            	</div>
-		        </div>
-		        
-		        <div class="form-group">
-		           	<label for="addDate" class="col-sm-2 control-label">Date:</label>
-
-		            	<div class="col-sm-10">
-		                	<input type="date" name="addDate" id="addDate" class="form-control"/>
 		            	</div>
 		        </div>
 		        <div class="form-group text-center">

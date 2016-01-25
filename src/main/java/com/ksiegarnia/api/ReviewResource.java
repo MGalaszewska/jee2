@@ -38,30 +38,11 @@ public class ReviewResource {
     public Review getReview(@PathParam("id") long id) {
         return bookStorage.getReview(id);
     }
-/*
-    @POST
-    @Path("/add")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Review addReview(
-    		@PathParam("book") Long id,
-            @FormParam("revAuthor") String revAuthor,
-            @FormParam("text") String text) {
-
-        Review review = new Review();
-        review.setRevAuthor(revAuthor);
-        review.setText(text);
-        review.setAddDate(new Date());
-        
-        bookStorage.addReview(review);
-        return review;
-    }
-*/
     
     @POST
     @Path("/add")
     @Produces(MediaType.APPLICATION_JSON)
     public Review addReview(
-            @FormParam("addDate") Date addDate,
             @FormParam("book") Long book,
             @FormParam("revAuthor") String revAuthor,
             @FormParam("text") String text)
@@ -69,7 +50,7 @@ public class ReviewResource {
     	Review review = new Review();
 
     	review.setBook(bookStorage.getBook(book));
-    	review.setAddDate(addDate);
+    	review.setAddDate(new Date());
     	review.setRevAuthor(revAuthor);
     	review.setText(text);
 

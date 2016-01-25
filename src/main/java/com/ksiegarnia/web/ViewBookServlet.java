@@ -29,7 +29,7 @@ public class ViewBookServlet extends HttpServlet{
         request.setAttribute("bookID", id);
         //request.setAttribute("reviews", book.getReviews());
         
-     //   idToDelete = Long.getLong(id);
+        idToDelete = id;
         request.getRequestDispatcher("/book/view.jsp").forward(request, response);
     }
 }

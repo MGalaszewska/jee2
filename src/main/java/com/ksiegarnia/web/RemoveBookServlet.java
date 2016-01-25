@@ -23,7 +23,6 @@ public class RemoveBookServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Long id = WebUtils.getBookID(request);
 
-        //bookStorage.deleteBook(bookID);
         bookStorage.deleteBook(id);
 
         WebUtils.redirectToMainPage(request, response);

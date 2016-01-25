@@ -24,7 +24,7 @@
 								
 							},
 						    success: function() { document.location.replace("${pageContext.request.contextPath}/main"); },
- 						    error: function() { alert("Nieprawidłowo wprowadzono dane!"); 
+ 						    error: function() { alert("Wrong data!"); 
  						    }
 						}	
 						);

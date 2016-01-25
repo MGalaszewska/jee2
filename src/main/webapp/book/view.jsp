@@ -42,6 +42,28 @@
 										});
 					});
 </script>
+<script>
+	$(document)
+			.ready(
+					function() {
+						$("#addRev")
+								.on(
+										'click',
+										function(e) {
+											e.preventDefault();
+											$
+													.ajax({
+														url : '${pageContext.request.contextPath}/api/reviews/add/${bookID}',
+														type : 'POST',
+														success : function() {
+															document.location
+																	.replace("${pageContext.request.contextPath}/main");
+														}
+													});
+										});
+					});
+</script>
+
 </head>
 
 <body>
@@ -56,6 +78,8 @@
 			<div id = "a"></div>
 
 			<div class="form-group text-center">
+			<a href="${pageContext.request.contextPath}/AddReview/${bookID}"
+					class="btn btn-primary" role="button">Add review</a>
 				<a href="${pageContext.request.contextPath}/BookEdit/${bookID}"
 					class="btn btn-primary" role="button">Edit</a>
 					<a href="${pageContext.request.contextPath}/BookRemove/${bookID}"

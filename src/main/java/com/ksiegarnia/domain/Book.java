@@ -1,6 +1,7 @@
 package com.ksiegarnia.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -13,23 +14,43 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @NamedQueries(@NamedQuery(name = "book.all", query = "select b from Book b order by b.id"))
 public class Book implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	private Long id;
 
 	private String title;
 	private String author;
+	
+	private List<Review> reviews = new ArrayList<Review>();
 
-	public Book() {
-		super();
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "book")
+	@JsonIgnore
+	public List<Review> getReviews() {
+		return reviews;
 	}
 	
+	public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
+
+	public Book() {
+	}
+	
+	public Book(String title, String author) {
+		super();
+		this.title = title;
+		this.author = author;
+	}
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getId() {
 		return id;
 	}
@@ -53,4 +74,7 @@ public class Book implements Serializable {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
+
+    
+
 }

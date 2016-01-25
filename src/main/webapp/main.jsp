@@ -46,7 +46,8 @@
     <div>
         <h1>Books</h1>
         <div>
-        	<a href="${pageContext.request.contextPath}/api/books/addbook">Add</a>
+        	<a href="${pageContext.request.contextPath}/api/books/addbook">Add book</a>
+        	<a href="${pageContext.request.contextPath}/AddReview">Add review</a>
          </div>
         <br/>
 

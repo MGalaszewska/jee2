@@ -14,16 +14,16 @@ import com.ksiegarnia.domain.Book;
 import com.ksiegarnia.domain.Review;
 import com.ksiegarnia.service.BookManager;
 
-@WebServlet(urlPatterns = "/reviews/add/*")
+@WebServlet(urlPatterns = "/AddReview")
 public class AddReviewServlet extends HttpServlet {
 	@EJB
 	private BookManager bookStorage;
-
+/*
 	@Override
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		Long bookID = WebUtils.getBookID(request);
-		Book book = bookStorage.get(bookID);
+		Book book = bookStorage.getBook(bookID);
 
 		String reviewText = request.getParameter("text");
 		String revAuthor = request.getParameter("revAuthor");
@@ -37,4 +37,11 @@ public class AddReviewServlet extends HttpServlet {
 		response.sendRedirect(response.encodeRedirectURL(request
 				.getContextPath() + "/view/" + bookID));
 	}
+*/
+	@Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setAttribute("books", bookStorage.getAllBook());
+		request.getRequestDispatcher("/review/addRev.jsp").forward(request, response);
+	}
+
 }

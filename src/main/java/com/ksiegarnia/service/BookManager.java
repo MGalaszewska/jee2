@@ -8,7 +8,6 @@ import javax.persistence.PersistenceContext;
 
 import com.ksiegarnia.domain.Book;
 import com.ksiegarnia.domain.Review;
-import com.ksiegarnia.web.ViewBookServlet;
 
 @Stateless
 public class BookManager {
@@ -31,9 +30,6 @@ public class BookManager {
 		book.setAuthor(author);
 
 		em.merge(book);
-		/*
-		 * books.set(books.indexOf(book), book);
-		 */
 	}
 
 	public void deleteBook(Long id) {
@@ -63,15 +59,12 @@ public class BookManager {
 		review.setRevAuthor(revAuthor);
 		review.setText(text);
 		em.merge(review);
-		em.merge(book);
 	}
-
-	public void deleteReview(Review review) {
-		review = em.find(Review.class, review.getId());
-		Book b = em.find(Book.class,  review.getBook().getId());
-		b.getReviews().remove(review);
+	public void deleteReview(Long id) {
+		Review review = em.find(Review.class, id);
+		Book book = em.find(Book.class,  review.getBook().getId());
+		book.getReviews().remove(review);
 		em.remove(review);
-		em.merge(b);
 	}
 
 	@SuppressWarnings("unchecked")

@@ -11,31 +11,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ksiegarnia.service.BookManager;
 
-/**
- * Servlet implementation class EditBookServlet
- */
 @WebServlet(urlPatterns = "/BookEdit/*")
-public class EditBookServlet extends HttpServlet{
-    @EJB
-    private BookManager bookStorage;
+public class EditBookServlet extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long id = WebUtils.getBookID(request);
+	private static final long serialVersionUID = 1L;
+	@EJB
+	private BookManager bookStorage;
 
-        request.setAttribute("book", bookStorage.getBook(id));
-        request.getRequestDispatcher("/book/edit.jsp").forward(request, response);
-    }
-/*
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String title = request.getParameter("title");
-        String author= request.getParameter("author");
-        Long bookID = WebUtils.getBookID(request);
+	@Override
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		Long id = WebUtils.getBookID(request);
 
-        bookStorage.updateBook(bookID, title, author);
-
-        WebUtils.redirectToBookView(request, response, bookID);
-    }
-    */
+		request.setAttribute("book", bookStorage.getBook(id));
+		request.getRequestDispatcher("/book/edit.jsp").forward(request,
+				response);
+	}
 }

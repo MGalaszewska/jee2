@@ -1,72 +1,80 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+
+<!DOCTYPE html>
 <html>
 <head>
 <jsp:include page="../include/scripts.jsp" />
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.css">
 
 <script>
-		$(document).ready(function()
-			{
-				$( "#add" ).on('click', function(e)
-					{	
-						e.preventDefault();
-						$.ajax
-						(
-						{
-						    url: '${pageContext.request.contextPath}/api/books/add',
-						    type: 'POST',
-						    data:
-							{
-								title: document.getElementById('title').value,
-								author: document.getElementById('author').value,
-								
-							},
-						    success: function() { document.location.replace("${pageContext.request.contextPath}/main"); },
- 						    error: function() { alert("Wrong data!"); }
-						}		
-						);
-					}
-				);
-			}
-		);
-	</script>
+	$(document)
+			.ready(
+					function() {
+						$("#add")
+								.on(
+										'click',
+										function(e) {
+											e.preventDefault();
+											$
+													.ajax({
+														url : '${pageContext.request.contextPath}/api/books/add',
+														type : 'POST',
+														data : {
+															title : document
+																	.getElementById('title').value,
+															author : document
+																	.getElementById('author').value,
 
-
-
-
+														},
+														success : function() {
+															document.location
+																	.replace("${pageContext.request.contextPath}/main");
+														},
+														error : function() {
+															alert("Wrong data!");
+														}
+													});
+										});
+					});
+</script>
 </head>
+
+
 <body>
 
-<div>
-    <div>
-        <h1>Add book</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Add book</h1>
 
-        	<form action="${pageContext.request.contextPath}/api/books/add" data-toggle="validator" method="post">
-		        <div>
-		            <label for="title">Title:</label>
+				<form action="${pageContext.request.contextPath}/api/books/add"
+					method="post" data-toggle="validator" class="form-horizontal">
+					<div class="form-group">
+						<label for="title" class="col-sm-2 control-label">Title:</label>
 
-		            <div>
-		                <input type="text" name="title" id="title">
-		            </div>
-		        </div>
+						<div class="col-sm-10">
+							<input type="text" name="title" id="title" class="form-control">
+						</div>
+					</div>
 
-		        <div>
-		            <label for="author">Author:</label>
+					<div class="form-group">
+						<label for="author" class="col-sm-2 control-label">Author:</label>
 
-		            <div>
-		                <input type="text" name="author" id="author">
-		            </div>
-		        </div>
-		        <div>
-		                <button id="add" type="submit">Add</button>
-		 	    </div>
-		 	    <div>
-        	<a href="${pageContext.request.contextPath}/main">Home page</a>
-         </div>
-            	</form>
-</div>
-</div>
-
+						<div class="col-sm-10">
+							<input type="text" name="author" id="author" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<button id="add" type="submit" class="btn btn-success">Add</button>
+					</div>
+					<div class="form-group text-center">
+						<a href="${pageContext.request.contextPath}/main"
+							class="btn btn-default" role="button">Home page</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

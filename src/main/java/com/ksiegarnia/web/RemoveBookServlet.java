@@ -11,20 +11,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ksiegarnia.service.BookManager;
 
-/**
- * Servlet implementation class RemoveBookServlet
- */
 @WebServlet(urlPatterns = "/BookRemove/*")
-public class RemoveBookServlet extends HttpServlet{
-    @EJB
-    private BookManager bookStorage;
+public class RemoveBookServlet extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long id = WebUtils.getBookID(request);
+	private static final long serialVersionUID = 1L;
+	@EJB
+	private BookManager bookStorage;
 
-        bookStorage.deleteBook(id);
+	@Override
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		Long id = WebUtils.getBookID(request);
 
-        WebUtils.redirectToMainPage(request, response);
-    }
+		bookStorage.deleteBook(id);
+
+		WebUtils.redirectToMainPage(request, response);
+	}
 }

@@ -58,31 +58,26 @@ public class ReviewResource {
 
        return review;
     }
-    
-    
+      
     @DELETE
     @Path("/delete/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public void deleteBook(@PathParam("id") Long id) {
-        bookStorage.deleteBook(id);
+    public void deleteReview(@PathParam("id") Long id) {
+        bookStorage.deleteReview(id);
     }
 
     @PUT
     @Path("edit/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Book editBook(
+    public Review editReview(
             @PathParam("id") Long id,
-            @FormParam("title") String title,
-            @FormParam("author") String author) {
+            @FormParam("revAuthor") String revAuthor,
+            @FormParam("text") String text) {
 
-        Book book = bookStorage.getBook(id);
-
-        if (book != null) {
-        	book.setTitle(title);
-            book.setAuthor(author);
-
-            bookStorage.updateBook(book, title, author);
-        }
-        return book;
+        Review review = bookStorage.getReview(id);
+        Long bookID = review.getBook().getId();
+        Book book = bookStorage.getBook(bookID);
+        bookStorage.updateReview(book, review, revAuthor, text);
+        return review;
     }
 }

@@ -3,24 +3,24 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <jsp:include page="../include/scripts.jsp" />
 <link rel="stylesheet" type="text/css"
 	href="../static/css/bootstrap.css">
 
 <script>
-
 	$(document)
 			.ready(
 					function() {
 						$
 								.ajax({
-									url : '${pageContext.request.contextPath}/api/books/details/${bookID}',
+									url : '${pageContext.request.contextPath}/api/reviews/details/${reviewID}',
 									type : 'GET',
 									success : function(show) {
-										document.getElementById('t').innerHTML = show.title;
-										document.getElementById('a').innerHTML = show.author;
+										document.getElementById('revauthor').innerHTML = show.revAuthor;
+										document.getElementById('date').innerHTML = show.addDate;
+										document.getElementById('text').innerHTML = show.text;
 									}
 								});
 					});
@@ -36,7 +36,7 @@
 											e.preventDefault();
 											$
 													.ajax({
-														url : '${pageContext.request.contextPath}/api/books/delete/${bookID}',
+														url : '${pageContext.request.contextPath}/api/reviews/delete/${reviewID}',
 														type : 'DELETE',
 														success : function() {
 															document.location
@@ -57,7 +57,7 @@
 											e.preventDefault();
 											$
 													.ajax({
-														url : '${pageContext.request.contextPath}/api/reviews/add/${bookID}',
+														url : '${pageContext.request.contextPath}/api/reviews/add/${reviewID}',
 														type : 'POST',
 														success : function() {
 															document.location
@@ -74,34 +74,19 @@
 
 	<div>
 		<div>
-			<h1>Book</h1>
-			<br /> <label>Title:</label>
-			<div id="t"></div>
+			<br /> <label>Author:</label>
+			<div id="revauthor"></div>
 
-			<label>Author:</label>
-			<div id="a"></div>
+			<label>Create date:</label>
+			<div id="date"></div>
 
-			<label>Reviews:</label>
-			<c:forEach items="${reviews}" var="review">
-				<!-- <label>Author: ${review.revAuthor}</label><br/> -->
-				<label>${review.text}</label>
-				<br />
-				<!-- <label>Add date: ${review.addDate}</label><br/> -->
-				<a
-					href="${pageContext.request.contextPath}/ReviewDetails/${review.id}"
-					class="btn btn-primary" role="button">Details</a>
-				<a href="${pageContext.request.contextPath}/ReviewEdit/${review.id}"
-					class="btn btn-primary" role="button">Edit</a>
-				<a
-					href="${pageContext.request.contextPath}/ReviewRemove/${review.id}"
-					class="btn btn-primary" role="button">Remove</a>
-				<br />
-			</c:forEach>
+			<label>Review:</label>
+			<div id="text"></div>
 
 			<div class="form-group text-center">
-				<a href="${pageContext.request.contextPath}/BookEdit/${bookID}"
+				<a href="${pageContext.request.contextPath}/ReviewEdit/${reviewID}"
 					class="btn btn-primary" role="button">Edit</a> <a
-					href="${pageContext.request.contextPath}/BookRemove/${bookID}"
+					href="${pageContext.request.contextPath}/ReviewRemove/${reviewID}"
 					class="btn btn-primary" role="button">Delete</a> <a
 					href="${pageContext.request.contextPath}/main"
 					class="btn btn-default" role="button">Home page</a>

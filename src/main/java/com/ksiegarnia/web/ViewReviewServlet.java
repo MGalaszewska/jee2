@@ -1,6 +1,6 @@
 package com.ksiegarnia.web;
 
-import com.ksiegarnia.service.BookManager;
+import java.io.IOException;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -8,18 +8,24 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
-@WebServlet(urlPatterns = "/main")
-public class MainBookServlet extends HttpServlet {
+import com.ksiegarnia.service.BookManager;
+
+@WebServlet(urlPatterns = "/ReviewDetails/*")
+public class ViewReviewServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+
 	@EJB
-	private BookManager bookStorage;
+	private BookManager bookStorage = new BookManager();
 
 	@Override
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("main.jsp").forward(request, response);
+		Long id = WebUtils.getReviewID(request);
+
+		request.setAttribute("reviewID", id);
+		request.getRequestDispatcher("/review/viewRev.jsp").forward(request,
+				response);
 	}
 }

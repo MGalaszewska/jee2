@@ -30,7 +30,7 @@ public class Book implements Serializable {
 	
 	private List<Review> reviews = new ArrayList<Review>();
 
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "book")
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "book")
 	@JsonIgnore
 	public List<Review> getReviews() {
 		return reviews;

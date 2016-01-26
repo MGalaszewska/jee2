@@ -76,6 +76,11 @@
 
 			<label>Author:</label>
 			<div id = "a"></div>
+			
+			<c:forEach items="${reviews}" var="comment">
+    <label>ID: ${comment.revAuthor}</label><br/>
+    <label>Name: ${comment.text}</label><br/>
+</c:forEach>
 
 			<div class="form-group text-center">
 			<a href="${pageContext.request.contextPath}/AddReview/${bookID}"

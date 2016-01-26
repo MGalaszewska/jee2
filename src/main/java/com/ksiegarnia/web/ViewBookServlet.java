@@ -24,10 +24,10 @@ public class ViewBookServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Long id = WebUtils.getBookID(request);
 
-        //Book book = bookStorage.getBook(bookID);
+        Book book = bookStorage.getBook(id);
         
         request.setAttribute("bookID", id);
-        //request.setAttribute("reviews", book.getReviews());
+        request.setAttribute("reviews", book.getReviews());
         
         idToDelete = id;
         request.getRequestDispatcher("/book/view.jsp").forward(request, response);
